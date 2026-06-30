@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Coaching — Intake</title>
+<style>
+  :root{--bg:#0a0a0a;--card:#141414;--border:#2a2a2a;--accent:#c8f04a;--text:#f5f5f5;--muted:#9a9a9a;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Roboto','Google Sans',Arial,sans-serif;font-weight:300;line-height:1.6;padding:24px 16px 80px;}
+  .wrap{max-width:640px;margin:0 auto;}
+  .eyebrow{color:var(--accent);font-weight:800;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:8px;}
+  h1{font-weight:800;font-size:32px;line-height:1.15;margin:0 0 12px;}
+  .intro{color:var(--muted);font-size:15px;margin-bottom:32px;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:16px;}
+  .section-num{font-weight:800;font-size:12px;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:4px;}
+  .card h2{font-weight:800;font-size:19px;margin:0 0 16px;}
+  .field{margin-bottom:18px;}.field:last-child{margin-bottom:0;}
+  label.q{display:block;font-size:14px;font-weight:500;margin-bottom:8px;}
+  input[type="text"],input[type="number"],input[type="tel"],textarea{width:100%;background:#1a1a1a;border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:inherit;font-size:14px;padding:12px 14px;}
+  textarea{resize:vertical;min-height:64px;}
+  input:focus,textarea:focus{outline:none;border-color:var(--accent);}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .pill{position:relative;}
+  .pill input{position:absolute;opacity:0;width:100%;height:100%;cursor:pointer;margin:0;}
+  .pill span{display:inline-flex;align-items:center;padding:10px 16px;border:1px solid var(--border);border-radius:999px;font-size:13px;color:var(--muted);background:#1a1a1a;transition:all 0.15s ease;}
+  .pill input:checked + span{border-color:var(--accent);color:#0a0a0a;background:var(--accent);font-weight:600;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:420px){.row2{grid-template-columns:1fr;}}
+  button#sendBtn{width:100%;background:var(--accent);color:#0a0a0a;border:none;border-radius:999px;font-weight:800;font-size:15px;padding:18px;cursor:pointer;margin-top:24px;font-family:inherit;}
+  .footnote{text-align:center;color:var(--muted);font-size:12px;margin-top:12px;}
+  .required{color:var(--accent);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Fit With Moussa — Private Coaching</div>
+  <h1>Let's get to know you</h1>
+  <p class="intro">A few minutes now means a plan built around your actual life. Answer honestly — there are no wrong answers here.</p>
+  <form id="intakeForm">
+    <div class="card">
+      <div class="section-num">Section 01</div>
+      <h2>About You</h2>
+      <div class="field"><label class="q">Full name <span class="required">*</span></label><input type="text" id="f_name" required></div>
+      <div class="row2">
+        <div class="field"><label class="q">Age <span class="required">*</span></label><input type="number" id="f_age" min="14" max="90" required></div>
+        <div class="field"><label class="q">Gender <span class="required">*</span></label><div class="pills"><label class="pill"><input type="radio" name="gender" value="Female"><span>Female</span></label><label class="pill"><input type="radio" name="gender" value="Male"><span>Male</span></label></div></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label class="q">Height (cm) <span class="required">*</span></label><input type="number" id="f_height" required></div>
+        <div class="field"><label class="q">Weight (kg) <span class="required">*</span></label><input type="number" id="f_weight" step="0.1" required></div>
+      </div>
+      <div class="field"><label class="q">WhatsApp number <span class="required">*</span></label><input type="tel" id="f_phone" required></div>
+      <div class="field"><label class="q">Occupation</label><input type="text" id="f_job" placeholder="e.g. teacher, engineer, stay at home mom..."></div>
+    </div>
+    <div class="card">
+      <div class="section-num">Section 02</div>
+      <h2>Your Goal</h2>
+      <div class="field"><label class="q">What do you want to achieve?</label><textarea id="f_goal" placeholder="Be as specific as you like — lose weight, build muscle, feel better, more energy..."></textarea></div>
+      <div class="field"><label class="q">Have you tried anything before? What worked and what didn't?</label><textarea id="f_history"></textarea></div>
+      <div class="field"><label class="q">Is there a specific timeline or event you are working toward?</label><input type="text" id="f_timeline" placeholder="e.g. wedding in 3 months, summer, no deadline..."></div>
+    </div>
+    <div class="card">
+      <div class="section-num">Section 03</div>
+      <h2>Activity & Lifestyle</h2>
+      <div class="field"><label class="q">How active is your typical day?</label><div class="pills"><label class="pill"><input type="radio" name="activity" value="Mostly sitting"><span>Mostly sitting</span></label><label class="pill"><input type="radio" name="activity" value="On my feet sometimes"><span>On my feet sometimes</span></label><label class="pill"><input type="radio" name="activity" value="Very active"><span>Very active</span></label></div></div>
+      <div class="field"><label class="q">Do you currently exercise?</label><div class="pills"><label class="pill"><input type="radio" name="exercise" value="No"><span>No</span></label><label class="pill"><input type="radio" name="exercise" value="Sometimes"><span>Sometimes</span></label><label class="pill"><input type="radio" name="exercise" value="Yes regularly"><span>Yes regularly</span></label></div></div>
+      <div class="field"><label class="q">If yes, what do you do and how often?</label><input type="text" id="f_exercise" placeholder="e.g. gym 3x/week, walking daily, yoga..."></div>
+      <div class="field"><label class="q">How would you describe your stress levels?</label><div class="pills"><label class="pill"><input type="radio" name="stress" value="Low"><span>Low</span></label><label class="pill"><input type="radio" name="stress" value="Moderate"><span>Moderate</span></label><label class="pill"><input type="radio" name="stress" value="High"><span>High</span></label><label class="pill"><input type="radio" name="stress" value="Very high"><span>Very high</span></label></div></div>
+      <div class="field"><label class="q">How many hours of sleep do you usually get?</label><div class="pills"><label class="pill"><input type="radio" name="sleep" value="Less than 5"><span>Less than 5</span></label><label class="pill"><input type="radio" name="sleep" value="5-6 hours"><span>5-6 hrs</span></label><label class="pill"><input type="radio" name="sleep" value="7-8 hours"><span>7-8 hrs</span></label><label class="pill"><input type="radio" name="sleep" value="More than 8"><span>More than 8</span></label></div></div>
+    </div>
+    <div class="card">
+      <div class="section-num">Section 04</div>
+      <h2>Eating Habits</h2>
+      <div class="field"><label class="q">How many meals do you usually eat per day?</label><div class="pills"><label class="pill"><input type="radio" name="meals" value="1-2"><span>1-2</span></label><label class="pill"><input type="radio" name="meals" value="3"><span>3</span></label><label class="pill"><input type="radio" name="meals" value="4-5"><span>4-5</span></label><label class="pill"><input type="radio" name="meals" value="Irregular"><span>Irregular</span></label></div></div>
+      <div class="field"><label class="q">Who usually prepares your food?</label><div class="pills"><label class="pill"><input type="radio" name="cooks" value="I cook"><span>I cook</span></label><label class="pill"><input type="radio" name="cooks" value="Family cooks"><span>Family cooks</span></label><label class="pill"><input type="radio" name="cooks" value="Mostly order/eat out"><span>Mostly order/eat out</span></label></div></div>
+      <div class="field"><label class="q">How often do you eat out or order food?</label><div class="pills"><label class="pill"><input type="radio" name="eatout" value="Rarely"><span>Rarely</span></label><label class="pill"><input type="radio" name="eatout" value="A few times a week"><span>A few times a week</span></label><label class="pill"><input type="radio" name="eatout" value="Almost daily"><span>Almost daily</span></label></div></div>
+      <div class="field"><label class="q">Walk me through a normal day of eating</label><textarea id="f_day" placeholder="Be honest, this helps more than anything else..."></textarea></div>
+      <div class="field"><label class="q">Do you prefer variety or simple repeatable meals?</label><div class="pills"><label class="pill"><input type="radio" name="variety" value="I like variety"><span>I like variety</span></label><label class="pill"><input type="radio" name="variety" value="Simple and repeatable"><span>Simple and repeatable</span></label></div></div>
+    </div>
+    <div class="card">
+      <div class="section-num">Section 05</div>
+      <h2>Food Preferences</h2>
+      <div class="field"><label class="q">Foods and meals you love and could eat often</label><textarea id="f_likes"></textarea></div>
+      <div class="field"><label class="q">Foods you dislike or want to avoid</label><textarea id="f_dislikes"></textarea></div>
+    </div>
+    <div class="card">
+      <div class="section-num">Section 06</div>
+      <h2>Health & Safety</h2>
+      <div class="field"><label class="q">Any allergies or food intolerances?</label><textarea id="f_allergies" placeholder="If none, write none"></textarea></div>
+      <div class="field"><label class="q">Any medical conditions, medications, or supplements?</label><textarea id="f_medical" placeholder="If none, write none"></textarea></div>
+      <div class="field"><label class="q">Are you currently pregnant or breastfeeding?</label><div class="pills"><label class="pill"><input type="radio" name="pregnant" value="No"><span>No</span></label><label class="pill"><input type="radio" name="pregnant" value="Yes"><span>Yes</span></label></div></div>
+      <div class="field"><label class="q">Anything else I should know before building your plan?</label><textarea id="f_notes"></textarea></div>
+    </div>
+    <button type="button" id="sendBtn" onclick="generatePDF()">Download My Intake Form as PDF</button>
+    <p class="footnote">A PDF will save to your phone — send it to Moussa on WhatsApp.</p>
+  </form>
+</div>
+<script>
+function g(id){var e=document.getElementById(id);return e&&e.value.trim()?e.value.trim():'—';}
+function r(n){var e=document.querySelector('input[name="'+n+'"]:checked');return e?e.value:'—';}
+function generatePDF(){
+  var name=g('f_name'),age=g('f_age'),phone=g('f_phone'),height=g('f_height'),weight=g('f_weight');
+  if(name==='—'||age==='—'||phone==='—'||height==='—'||weight==='—'){alert('Please fill in all required fields marked with *.');return;}
+  var html='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Coaching Intake - '+name+'</title>'
+  +'<style>@page{size:A4;margin:12mm;}*{box-sizing:border-box;margin:0;padding:0;}'
+  +'body{background:#0a0a0a;color:#f5f5f5;font-family:Arial,Helvetica,sans-serif;padding:0;}'
+  +'@media print{*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}body{background:#0a0a0a!important;}}'
+  +'.page{background:#0a0a0a;min-height:100vh;padding:24px;}'
+  +'.topbar{background:#c8f04a;height:4px;margin:-24px -24px 18px;}'
+  +'.eyebrow{color:#c8f04a;font-size:8px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;}'
+  +'h1{color:#f5f5f5;font-size:20px;font-weight:800;margin-bottom:2px;}'
+  +'.sub{color:#9a9a9a;font-size:10px;margin-bottom:18px;}'
+  +'.section{margin-bottom:14px;background:#141414;border:1px solid #2a2a2a;border-radius:8px;padding:12px;}'
+  +'.sec-title{color:#c8f04a;font-size:8px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid #2a2a2a;padding-bottom:6px;margin-bottom:10px;}'
+  +'.row{margin-bottom:8px;}.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;}'
+  +'.lbl{color:#9a9a9a;font-size:8px;margin-bottom:2px;}'
+  +'.val{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:4px;padding:6px 10px;font-size:10px;color:#f5f5f5;min-height:24px;word-wrap:break-word;line-height:1.4;}'
+  +'.footer{margin-top:16px;padding-top:8px;border-top:1px solid #2a2a2a;color:#9a9a9a;font-size:8px;text-align:center;}'
+  +'</style></head><body><div class="page">'
+  +'<div class="topbar"></div>'
+  +'<div class="eyebrow">Fit With Moussa — Private Coaching</div>'
+  +'<h1>Coaching Intake Form</h1>'
+  +'<div class="sub">Submitted by '+name+'</div>'
+  +'<div class="section"><div class="sec-title">About You</div>'
+  +'<div class="row2"><div><div class="lbl">Full Name</div><div class="val">'+name+'</div></div><div><div class="lbl">Age</div><div class="val">'+age+'</div></div></div>'
+  +'<div class="row2"><div><div class="lbl">Gender</div><div class="val">'+r('gender')+'</div></div><div><div class="lbl">WhatsApp</div><div class="val">'+phone+'</div></div></div>'
+  +'<div class="row2"><div><div class="lbl">Height</div><div class="val">'+height+' cm</div></div><div><div class="lbl">Weight</div><div class="val">'+weight+' kg</div></div></div>'
+  +'<div class="row"><div class="lbl">Occupation</div><div class="val">'+g('f_job')+'</div></div>'
+  +'</div>'
+  +'<div class="section"><div class="sec-title">Your Goal</div>'
+  +'<div class="row"><div class="lbl">Goal</div><div class="val">'+g('f_goal')+'</div></div>'
+  +'<div class="row"><div class="lbl">Past attempts</div><div class="val">'+g('f_history')+'</div></div>'
+  +'<div class="row"><div class="lbl">Timeline</div><div class="val">'+g('f_timeline')+'</div></div>'
+  +'</div>'
+  +'<div class="section"><div class="sec-title">Activity & Lifestyle</div>'
+  +'<div class="row2"><div><div class="lbl">Daily activity</div><div class="val">'+r('activity')+'</div></div><div><div class="lbl">Exercises</div><div class="val">'+r('exercise')+'</div></div></div>'
+  +'<div class="row"><div class="lbl">Exercise detail</div><div class="val">'+g('f_exercise')+'</div></div>'
+  +'<div class="row2"><div><div class="lbl">Stress level</div><div class="val">'+r('stress')+'</div></div><div><div class="lbl">Sleep</div><div class="val">'+r('sleep')+'</div></div></div>'
+  +'</div>'
+  +'<div class="section"><div class="sec-title">Eating Habits</div>'
+  +'<div class="row2"><div><div class="lbl">Meals/day</div><div class="val">'+r('meals')+'</div></div><div><div class="lbl">Who cooks</div><div class="val">'+r('cooks')+'</div></div></div>'
+  +'<div class="row"><div class="lbl">Eating out</div><div class="val">'+r('eatout')+'</div></div>'
+  +'<div class="row"><div class="lbl">Normal day of eating</div><div class="val">'+g('f_day')+'</div></div>'
+  +'<div class="row"><div class="lbl">Variety preference</div><div class="val">'+r('variety')+'</div></div>'
+  +'</div>'
+  +'<div class="section"><div class="sec-title">Food Preferences</div>'
+  +'<div class="row"><div class="lbl">Foods I love</div><div class="val">'+g('f_likes')+'</div></div>'
+  +'<div class="row"><div class="lbl">Foods I avoid</div><div class="val">'+g('f_dislikes')+'</div></div>'
+  +'</div>'
+  +'<div class="section"><div class="sec-title">Health & Safety</div>'
+  +'<div class="row"><div class="lbl">Allergies</div><div class="val">'+g('f_allergies')+'</div></div>'
+  +'<div class="row"><div class="lbl">Medical / medications</div><div class="val">'+g('f_medical')+'</div></div>'
+  +'<div class="row2"><div><div class="lbl">Pregnant / breastfeeding</div><div class="val">'+r('pregnant')+'</div></div></div>'
+  +'<div class="row"><div class="lbl">Additional notes</div><div class="val">'+g('f_notes')+'</div></div>'
+  +'</div>'
+  +'<div class="footer">Fit With Moussa &nbsp;·&nbsp; @fitwithmoussa &nbsp;·&nbsp; +20 106 580 4951</div>'
+  +'</div><script>window.onload=function(){window.print();}<\/script></body></html>';
+  var w=window.open('','_blank');
+  if(w){w.document.write(html);w.document.close();}
+}
+</script>
+</body>
+</html>

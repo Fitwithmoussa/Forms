@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fit With Moussa — Coaching Intake</title>
+<style>
+  :root{--bg:#0a0a0a;--card:#141414;--border:#2a2a2a;--accent:#c8f04a;--text:#f5f5f5;--muted:#7a7a7a;--muted2:#b0b0b0;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-weight:300;line-height:1.65;padding:0 0 80px;}
+  .wrap{max-width:640px;margin:0 auto;padding:0 18px;}
+  .cover{padding:48px 24px 36px;text-align:center;border-bottom:1px solid var(--border);margin-bottom:32px;}
+  .cover .eyebrow{color:var(--accent);font-size:11px;font-weight:800;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:14px;}
+  .cover h1{font-size:28px;font-weight:800;margin-bottom:8px;}
+  .cover p{color:var(--muted2);font-size:14px;max-width:460px;margin:0 auto;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:16px;}
+  .section-num{font-size:11px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;}
+  .card h2{font-size:18px;font-weight:800;margin-bottom:16px;}
+  .field{margin-bottom:16px;}
+  .field:last-child{margin-bottom:0;}
+  label.q{display:block;font-size:14px;font-weight:500;margin-bottom:8px;}
+  input[type="text"],input[type="number"],input[type="tel"],textarea,select{width:100%;background:#1a1a1a;border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:inherit;font-size:14px;padding:11px 14px;transition:border-color 0.15s;}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent);}
+  textarea{resize:vertical;min-height:68px;}
+  select option{background:#1a1a1a;}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .pill{position:relative;}
+  .pill input{position:absolute;opacity:0;width:100%;height:100%;cursor:pointer;margin:0;}
+  .pill span{display:inline-flex;align-items:center;padding:9px 16px;border:1px solid var(--border);border-radius:999px;font-size:13px;color:var(--muted);background:#1a1a1a;transition:all 0.15s ease;}
+  .pill input:checked + span{border-color:var(--accent);color:var(--bg);background:var(--accent);font-weight:600;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media(max-width:420px){.row2{grid-template-columns:1fr;}}
+  .required{color:var(--accent);}
+  button#sendBtn{width:100%;background:var(--accent);color:var(--bg);border:none;border-radius:999px;font-weight:800;font-size:15px;padding:18px;cursor:pointer;margin-top:24px;transition:opacity 0.15s;}
+  button#sendBtn:hover{opacity:0.88;}
+  .footnote{text-align:center;color:var(--muted);font-size:12px;margin-top:12px;}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="eyebrow">Fit With Moussa — Private Coaching</div>
+  <h1>Let's get to know you</h1>
+  <p>A few minutes now means a plan built around your actual life. Answer honestly — there are no wrong answers here.</p>
+</div>
+
+<div class="wrap">
+<form id="intakeForm">
+
+  <div class="card">
+    <div class="section-num">Section 01</div>
+    <h2>About You</h2>
+    <div class="field"><label class="q">Full name <span class="required">*</span></label><input type="text" name="name" required></div>
+    <div class="row2">
+      <div class="field"><label class="q">Age <span class="required">*</span></label><input type="number" name="age" min="14" max="90" required></div>
+      <div class="field"><label class="q">Gender <span class="required">*</span></label>
+        <div class="pills">
+          <label class="pill"><input type="radio" name="gender" value="Female" required><span>Female</span></label>
+          <label class="pill"><input type="radio" name="gender" value="Male"><span>Male</span></label>
+        </div>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="field"><label class="q">Height (cm) <span class="required">*</span></label><input type="number" name="height" min="120" max="220" required></div>
+      <div class="field"><label class="q">Current weight (kg) <span class="required">*</span></label><input type="number" name="weight" min="35" max="250" step="0.1" required></div>
+    </div>
+    <div class="field"><label class="q">WhatsApp number <span class="required">*</span></label><input type="tel" name="phone" required></div>
+    <div class="field"><label class="q">Occupation</label><input type="text" name="occupation" placeholder="e.g. teacher, engineer, stay at home mom..."></div>
+  </div>
+
+  <div class="card">
+    <div class="section-num">Section 02</div>
+    <h2>Your Goal</h2>
+    <div class="field"><label class="q">What do you want to achieve? <span class="required">*</span></label><textarea name="goal" required placeholder="Be as specific as you like — lose weight, build muscle, feel better, more energy, sleep better..."></textarea></div>
+    <div class="field"><label class="q">Have you tried anything before? What worked and what didn't?</label><textarea name="history" placeholder="Any diets, programs, or coaches you have tried before..."></textarea></div>
+    <div class="field"><label class="q">Is there a specific timeline or event you are working toward?</label><input type="text" name="timeline" placeholder="e.g. wedding in 3 months, no deadline, summer..."></div>
+  </div>
+
+  <div class="card">
+    <div class="section-num">Section 03</div>
+    <h2>Activity & Lifestyle</h2>
+    <div class="field"><label class="q">How active is your typical day?</label>
+      <div class="pills">
+        <label class="pill"><input type="radio" name="dailyActivity" value="Mostly sitting"><span>Mostly sitting</span></label>
+        <label class="pill"><input type="radio" name="dailyActivity" value="On my feet sometimes"><span>On my feet sometimes</span></label>
+        <label class="pill"><input type="radio" name="dailyActivity" value="Very active"><span>Very active</span></label>
+      </div>
+    </div>
+    <div class="field"><label class="q">Do you currently exercise?</label>
+      <div class="pills">
+        <label class="pill"><input type="radio" name="exercise" value="No"><span>No</span></label>
+        <label class="pill"><input type="radio" name="exercise" value="Sometimes"><span>Sometimes</span></label>
+        <label class="pill"><input type="radio" name="exercise" value="Yes regularly"><span>Yes regularly</span></label>
+      </div>
+    </div>
+    <div class="field"><label class="q">If yes, what do you do and how often?</label><input type="text" name="exerciseDetail" placeholder="e.g. gym 3x/week, walking daily, yoga..."></div>
+    <div class="field"><label class="q">How would you describe your stress levels?</label>
+      <div class="pills">
+        <label class="pill"><input type="radio" name="stress" value="Low"><span>Low</span></label>
+        <label class="pill"><input type="radio" name="stress" value="Moderate"><span>Moderate</span></label>
+        <label class="pill"><input type="radio" name="stress" value="High"><span>High</span></label>
+        <label class="pill"><input type="radio" name="stress" value="Very high"><span>Very high</span></label>
+      </div>
+    </div>
+    <div class="field"><label class="q">How many hours of sleep do you usually get?</label>
+      <div class="pills">
+        <label class="pill"><input type="radio" name="sleep" value="Less than 5"><span>Less than 5</span></label>
+        <label class="pill"><input type="radio" name="sleep" value="5-6 hours"><span>5–6 hrs</span></label>
+        <label class="pill"><input type="radio" name="sleep" value="7-8 hours"><span>7–8 hrs</span></label>
+        <label class="pill"><input type="radio" name="sleep" value="More than 8"><span>More than 8</span></label>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-num">Section 04</div>
+    <h2>Eating Habits</h2>
+    <div class="field"><label class="q">How many meals do you usually eat per day?</label>
+      <div class="pills">
+        <label class="pill"><input type="radio" name="meals" value="1-2"><span>1–2</span></label>
+        <label class="pill"><input type="radio" name="meals" value="3"><span>3</span></label>
+        <label class="pill"><input type="radio" name="meals" value="4-5"><span>4–5</span></label>
+        <label class="pill"><input type="radio" name="meals" value="Irregular"><span>Irregular</span></label>
+      </div>
+    </div>
+    <div class="field"><label class="q">Who usually prepares your food?</label>
+      <div class="pills">
+        <label class="pill"><input type="radio" name="whoCooks" value="I cook"><span>I cook</span></label>
+        <label class="pill"><input type="radio" name="whoCooks" value="Family cooks"><span>Family cooks</span></label>
+        <label class="pill"><input type="radio" name="whoCooks" value="Mostly order or eat out"><span>Mostly order/eat out</span></label>
+      </div>
+    </div>
+    <div class="field"><label class="q">How often do you eat out or order food?</label>
+      <div class="pills">
+        <label class="pill"><input type="radio" name="eatOut" value="Rarely"><span>Rarely</span></label>
+        <label class="pill"><input type="radio" name="eatOut" value="A few times a week"><span>A few times a week</span></label>
+        <label class="pill"><input type="radio" name="eatOut" value="Almost daily"><span>Almost daily</span></label>
+      </div>
+    </div>
+    <div class="field"><label class="q">Walk me through a normal day of eating — what do you usually have from morning to night?</label><textarea name="normalDay" placeholder="Be honest, this helps more than anything else..."></textarea></div>
+    <div class="field"><label class="q">Do you prefer meal variety or simple repeatable meals?</label>
+      <div class="pills">
+        <label class="pill"><input type="radio" name="variety" value="I like variety"><span>I like variety</span></label>
+        <label class="pill"><input type="radio" name="variety" value="Simple and repeatable"><span>Simple and repeatable</span></label>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-num">Section 05</div>
+    <h2>Food Preferences</h2>
+    <div class="field"><label class="q">Foods and meals you love and could eat often</label><textarea name="likes"></textarea></div>
+    <div class="field"><label class="q">Foods you dislike or want to avoid</label><textarea name="dislikes"></textarea></div>
+  </div>
+
+  <div class="card">
+    <div class="section-num">Section 06</div>
+    <h2>Health & Safety</h2>
+    <div class="field"><label class="q">Any allergies or food intolerances?</label><textarea name="allergies" placeholder="If none, write none"></textarea></div>
+    <div class="field"><label class="q">Any medical conditions, medications, or supplements you are currently taking?</label><textarea name="medical" placeholder="If none, write none"></textarea></div>
+    <div class="field"><label class="q">Are you currently pregnant or breastfeeding?</label>
+      <div class="pills">
+        <label class="pill"><input type="radio" name="pregnancy" value="No"><span>No</span></label>
+        <label class="pill"><input type="radio" name="pregnancy" value="Yes"><span>Yes</span></label>
+      </div>
+    </div>
+    <div class="field"><label class="q">Anything else I should know before building your plan?</label><textarea name="notes" placeholder="Anything at all — lifestyle, schedule, preferences, concerns..."></textarea></div>
+  </div>
+
+  <button type="submit" id="sendBtn">Send My Info to Moussa</button>
+  <p class="footnote">This opens WhatsApp with your answers pre-filled — just hit send.</p>
+
+</form>
+</div>
+
+<script>
+const COACH_NUMBER = "201065804951";
+document.getElementById('intakeForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const data = new FormData(e.target);
+  const get = k => (data.get(k)||'—').toString().trim()||'—';
+  const msg =
+`PRIVATE COACHING INTAKE
+
+— ABOUT —
+Name: ${get('name')}
+Age: ${get('age')}
+Gender: ${get('gender')}
+Height: ${get('height')} cm
+Weight: ${get('weight')} kg
+WhatsApp: ${get('phone')}
+Occupation: ${get('occupation')}
+
+— GOAL —
+Goal: ${get('goal')}
+Past attempts: ${get('history')}
+Timeline: ${get('timeline')}
+
+— ACTIVITY & LIFESTYLE —
+Daily activity: ${get('dailyActivity')}
+Exercises: ${get('exercise')}
+Exercise detail: ${get('exerciseDetail')}
+Stress level: ${get('stress')}
+Sleep: ${get('sleep')}
+
+— EATING HABITS —
+Meals/day: ${get('meals')}
+Who cooks: ${get('whoCooks')}
+Eating out: ${get('eatOut')}
+Normal day: ${get('normalDay')}
+Variety preference: ${get('variety')}
+
+— PREFERENCES —
+Likes: ${get('likes')}
+Dislikes: ${get('dislikes')}
+
+— HEALTH & SAFETY —
+Allergies: ${get('allergies')}
+Medical/meds: ${get('medical')}
+Pregnant/breastfeeding: ${get('pregnancy')}
+Notes: ${get('notes')}`;
+
+  const waUrl = `https://wa.me/${COACH_NUMBER}?text=${encodeURIComponent(msg)}`;
+
+  const fallback = document.createElement('div');
+  fallback.innerHTML = `
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:14px;padding:20px;margin-top:16px;text-align:center;">
+      <p style="color:#b0b0b0;font-size:13px;margin-bottom:14px;">Tap the button below to send your info on WhatsApp.</p>
+      <a href="${waUrl}" style="display:inline-block;background:#c8f04a;color:#0a0a0a;font-weight:800;padding:16px 32px;border-radius:999px;text-decoration:none;font-size:15px;">Open WhatsApp Now</a>
+    </div>
+  `;
+  document.getElementById('intakeForm').appendChild(fallback);
+  fallback.scrollIntoView({behavior:'smooth'});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>استمارة التدريب الخاص</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0a0a0a;--card:#141414;--border:#2a2a2a;--accent:#c8f04a;--text:#f2f2f0;--muted:#9a9a95;}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
+  body{
+    background:var(--bg);color:var(--text);
+    font-family:'Cairo','Segoe UI','Geeza Pro','Noto Sans Arabic',Tahoma,Arial,sans-serif;
+    font-weight:400;line-height:1.7;padding:0 0 80px;direction:rtl;text-align:right;
+  }
+  header{padding:48px 20px 32px;text-align:center;border-bottom:1px solid var(--border);margin-bottom:8px;}
+  .brand{font-weight:800;font-size:13px;letter-spacing:0.04em;color:var(--accent);text-transform:uppercase;margin-bottom:14px;}
+  header h1{font-weight:800;font-size:26px;margin-bottom:10px;}
+  header p{color:var(--muted);font-size:14px;max-width:440px;margin:0 auto;}
+  form{max-width:640px;margin:0 auto;padding:0 20px;}
+  .section-num{color:var(--accent);font-weight:800;font-size:12px;letter-spacing:0.02em;margin-top:40px;margin-bottom:4px;}
+  h2{font-weight:800;font-size:20px;margin-bottom:18px;}
+  .field{margin-bottom:20px;}
+  label{display:block;font-size:14px;color:var(--text);margin-bottom:8px;font-weight:500;}
+  label .req{color:var(--accent);}
+  input[type=text],input[type=number],input[type=tel],textarea{
+    width:100%;background:var(--card);border:1px solid var(--border);border-radius:8px;
+    color:var(--text);padding:12px 14px;font-family:inherit;font-size:14px;font-weight:300;
+    text-align:right;direction:rtl;
+  }
+  textarea{min-height:80px;resize:vertical;}
+  .radio-group{display:flex;flex-wrap:wrap;gap:10px;}
+  .radio-option{position:relative;}
+  .radio-option input{position:absolute;opacity:0;}
+  .radio-option label{
+    background:var(--card);border:1px solid var(--border);border-radius:999px;
+    padding:9px 16px;font-size:13px;font-weight:400;margin:0;cursor:pointer;
+  }
+  .radio-option input:checked + label{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:700;}
+  .note{font-size:12px;color:var(--muted);margin-top:6px;}
+  .submit-wrap{margin-top:48px;text-align:center;}
+  button{
+    background:var(--accent);color:var(--bg);border:none;border-radius:999px;
+    padding:16px 36px;font-family:inherit;font-weight:800;font-size:14px;
+    letter-spacing:0.02em;cursor:pointer;
+  }
+  .submit-note{font-size:12px;color:var(--muted);margin-top:14px;}
+  @media print{ button, .submit-note{display:none;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">Fit With Moussa · تدريب خاص</div>
+  <h1>خلّينا نتعرف عليك</h1>
+  <p>كام دقيقة دلوقتي هتساعدنا نبني خطة على المزاج والحياة اليومية بالظبط، وكل إجابة بصراحة بتفرق. مفيش إجابة غلط هنا.</p>
+</header>
+
+<form onsubmit="return false;">
+
+  <div class="section-num">القسم 1</div>
+  <h2>البيانات الأساسية</h2>
+  <div class="field"><label>الاسم بالكامل <span class="req">*</span></label><input type="text" required></div>
+  <div class="field"><label>السن <span class="req">*</span></label><input type="number" required></div>
+  <div class="field"><label>النوع <span class="req">*</span></label>
+    <div class="radio-group">
+      <div class="radio-option"><input type="radio" name="gender" id="g1"><label for="g1">أنثى</label></div>
+      <div class="radio-option"><input type="radio" name="gender" id="g2"><label for="g2">ذكر</label></div>
+    </div>
+  </div>
+  <div class="field"><label>الطول (سم) <span class="req">*</span></label><input type="number" required></div>
+  <div class="field"><label>الوزن (كجم) <span class="req">*</span></label><input type="number" required></div>
+  <div class="field"><label>رقم الواتساب <span class="req">*</span></label><input type="tel" required></div>
+  <div class="field"><label>الوظيفة</label><input type="text"></div>
+
+  <div class="section-num">القسم 2</div>
+  <h2>الهدف</h2>
+  <div class="field"><label>الهدف من الاشتراك إيه؟</label><textarea></textarea></div>
+  <div class="field"><label>محاولات سابقة؟ إيه اللي نفع وإيه اللي معملش؟</label><textarea></textarea></div>
+  <div class="field"><label>فيه تايم لاين أو مناسبة معينة في البال؟</label><textarea></textarea></div>
+
+  <div class="section-num">القسم 3</div>
+  <h2>النشاط اليومي</h2>
+  <div class="field"><label>طبيعة اليوم بشكل عام؟</label>
+    <div class="radio-group">
+      <div class="radio-option"><input type="radio" name="activity" id="a1"><label for="a1">جلوس معظم اليوم</label></div>
+      <div class="radio-option"><input type="radio" name="activity" id="a2"><label for="a2">حركة ووقوف من وقت لتاني</label></div>
+      <div class="radio-option"><input type="radio" name="activity" id="a3"><label for="a3">نشاط عالي طول اليوم</label></div>
+    </div>
+  </div>
+  <div class="field"><label>فيه تمرين حالياً؟</label>
+    <div class="radio-group">
+      <div class="radio-option"><input type="radio" name="exercise" id="e1"><label for="e1">لأ</label></div>
+      <div class="radio-option"><input type="radio" name="exercise" id="e2"><label for="e2">أحياناً</label></div>
+      <div class="radio-option"><input type="radio" name="exercise" id="e3"><label for="e3">أيوه بانتظام</label></div>
+    </div>
+  </div>
+  <div class="field"><label>لو أيوه، نوع التمرين وعدد المرات؟</label><textarea></textarea></div>
+  <div class="field"><label>مستوى التوتر عادة؟</label>
+    <div class="radio-group">
+      <div class="radio-option"><input type="radio" name="stress" id="s1"><label for="s1">قليل</label></div>
+      <div class="radio-option"><input type="radio" name="stress" id="s2"><label for="s2">متوسط</label></div>
+      <div class="radio-option"><input type="radio" name="stress" id="s3"><label for="s3">عالي</label></div>
+      <div class="radio-option"><input type="radio" name="stress" id="s4"><label for="s4">عالي جداً</label></div>
+    </div>
+  </div>
+  <div class="field"><label>عدد ساعات النوم عادة؟</label>
+    <div class="radio-group">
+      <div class="radio-option"><input type="radio" name="sleep" id="sl1"><label for="sl1">أقل من 5</label></div>
+      <div class="radio-option"><input type="radio" name="sleep" id="sl2"><label for="sl2">5-6 ساعات</label></div>
+      <div class="radio-option"><input type="radio" name="sleep" id="sl3"><label for="sl3">7-8 ساعات</label></div>
+      <div class="radio-option"><input type="radio" name="sleep" id="sl4"><label for="sl4">أكتر من 8</label></div>
+    </div>
+  </div>
+
+  <div class="section-num">القسم 4</div>
+  <h2>عادات الأكل</h2>
+  <div class="field"><label>عدد الوجبات في اليوم عادة؟</label>
+    <div class="radio-group">
+      <div class="radio-option"><input type="radio" name="meals" id="m1"><label for="m1">1-2</label></div>
+      <div class="radio-option"><input type="radio" name="meals" id="m2"><label for="m2">3</label></div>
+      <div class="radio-option"><input type="radio" name="meals" id="m3"><label for="m3">4-5</label></div>
+      <div class="radio-option"><input type="radio" name="meals" id="m4"><label for="m4">مش منتظم</label></div>
+    </div>
+  </div>
+  <div class="field"><label>مين اللي بيطبخ عادة؟</label>
+    <div class="radio-group">
+      <div class="radio-option"><input type="radio" name="cooks" id="c1"><label for="c1">بطبخ لنفسي</label></div>
+      <div class="radio-option"><input type="radio" name="cooks" id="c2"><label for="c2">الأهل بيطبخوا</label></div>
+      <div class="radio-option"><input type="radio" name="cooks" id="c3"><label for="c3">طلب أكل غالباً</label></div>
+    </div>
+  </div>
+  <div class="field"><label>الأكل برة أو الطلب قد إيه؟</label>
+    <div class="radio-group">
+      <div class="radio-option"><input type="radio" name="eatout" id="eo1"><label for="eo1">نادراً</label></div>
+      <div class="radio-option"><input type="radio" name="eatout" id="eo2"><label for="eo2">كام مرة في الأسبوع</label></div>
+      <div class="radio-option"><input type="radio" name="eatout" id="eo3"><label for="eo3">كل يوم تقريباً</label></div>
+    </div>
+  </div>
+  <div class="field"><label>وصف يوم أكل عادي</label><textarea></textarea></div>
+  <div class="field"><label>التفضيل: تنويع في الأكل ولا وجبات بسيطة وثابتة؟</label>
+    <div class="radio-group">
+      <div class="radio-option"><input type="radio" name="variety" id="v1"><label for="v1">تنويع</label></div>
+      <div class="radio-option"><input type="radio" name="variety" id="v2"><label for="v2">بسيطة وثابتة</label></div>
+    </div>
+  </div>
+
+  <div class="section-num">القسم 5</div>
+  <h2>تفضيلات الأكل</h2>
+  <div class="field"><label>الأكل المفضّل واللي ممكن يتكرر كتير</label><textarea></textarea></div>
+  <div class="field"><label>الأكل الغير مفضّل أو المطلوب تجنبه</label><textarea></textarea></div>
+
+  <div class="section-num">القسم 6</div>
+  <h2>الصحة والسلامة</h2>
+  <div class="field"><label>حساسية من حاجة أو أكل معين؟</label><textarea></textarea></div>
+  <div class="field"><label>حالات صحية أو أدوية أو مكملات مستخدمة حالياً؟</label><textarea></textarea></div>
+  <div class="field"><label>الحمل أو الرضاعة حالياً؟</label>
+    <div class="radio-group">
+      <div class="radio-option"><input type="radio" name="pregnant" id="p1"><label for="p1">لأ</label></div>
+      <div class="radio-option"><input type="radio" name="pregnant" id="p2"><label for="p2">أيوه</label></div>
+    </div>
+  </div>
+  <div class="field">
+    <label>متابعة الدورة الشهرية، وهل بتأثر على الأكل أو الطاقة أو الرغبة في أكل معين؟</label>
+    <div class="radio-group">
+      <div class="radio-option"><input type="radio" name="cycle" id="cy1"><label for="cy1">مش مناسب</label></div>
+      <div class="radio-option"><input type="radio" name="cycle" id="cy2"><label for="cy2">أيوه وفيه تأثير ملحوظ</label></div>
+      <div class="radio-option"><input type="radio" name="cycle" id="cy3"><label for="cy3">أيوه بس مفيش تأثير ملحوظ</label></div>
+      <div class="radio-option"><input type="radio" name="cycle" id="cy4"><label for="cy4">مفيش متابعة</label></div>
+    </div>
+    <div class="note">ده هيساعد في التخطيط على أساس الجوع والطاقة الحقيقية بدل ما كل أسبوع يتعامل معاه بنفس الشكل.</div>
+  </div>
+  <div class="field"><label>حاجة عن الدورة يفيد ذكرها عند بناء الخطة؟ (اختياري)</label><textarea></textarea></div>
+  <div class="field"><label>حاجة تانية يفيد ذكرها قبل بناء الخطة؟</label><textarea></textarea></div>
+
+  <div class="submit-wrap">
+    <button onclick="window.print()">تحميل الاستمارة PDF</button>
+    <div class="submit-note">ملف الـ PDF هيتحفظ في التليفون، وبعدين يتبعت لموسى على واتساب.</div>
+  </div>
+
+</form>
+
+</body>
+</html>
